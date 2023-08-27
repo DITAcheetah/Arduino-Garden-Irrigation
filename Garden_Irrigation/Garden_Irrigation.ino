@@ -1,5 +1,6 @@
 #include <DS3231.h>
 
+// water timer
 int Relay = 4;
 
 DS3231  rtc(SDA, SCL);
@@ -11,6 +12,7 @@ const int OffHour = 18;
 const int OffMin = 53;
 
 void setup() {
+  //water timer
   Serial.begin(115200);
   rtc.begin();
   pinMode(Relay, OUTPUT);
@@ -18,6 +20,7 @@ void setup() {
 }
 
 void loop() {
+  //water timer
   t = rtc.getTime();
   Serial.print(t.hour);
   Serial.print(" hour(s), ");
